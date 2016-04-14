@@ -1,8 +1,8 @@
 'use strict';
 
 function sendError ( send, error, newCode ) {
-	var code;
-	var codes = [];
+	let code;
+	let codes = [];
 
 	function addCode ( additionalCode ) {
 		if ( additionalCode ) {

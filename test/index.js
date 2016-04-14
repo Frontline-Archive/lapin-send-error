@@ -2,15 +2,13 @@
 
 /* eslint no-unused-expressions:0 */
 
-var _         = require( 'lodash' );
-var lapinMock = require( 'lapin-mock' );
+const _         = require( 'lodash' );
+const lapinMock = require( 'lapin-mock' );
 
 require( 'should' );
 
 describe( '@sinet/lapin-send-error', function () {
-	var handleError;
-	var sendMock;
-	var error;
+	let handleError, sendMock, error;
 
 	before( function () {
 		handleError = require( process.cwd() );
@@ -27,7 +25,6 @@ describe( '@sinet/lapin-send-error', function () {
 		it( 'should return correct information', function () {
 			sendMock.should.have.property( 'errorMessage' ).and.equal( 'Something went wrong' );
 			sendMock.should.have.property( 'error' ).and.equal( error );
-
 		} );
 	} );
 
@@ -49,7 +46,7 @@ describe( '@sinet/lapin-send-error', function () {
 	} );
 
 	describe( '-- handle JSend error', function () {
-		var baseError = {
+		const baseError = {
 			'status' : 'error'
 		};
 
@@ -100,7 +97,6 @@ describe( '@sinet/lapin-send-error', function () {
 				sendMock.should.have.property( 'error' ).and.equal( error );
 				sendMock.should.have.property( 'code' ).and.equal( 'code' );
 			} );
-
 		} );
 
 		describe( '-- error with existing code', function () {
