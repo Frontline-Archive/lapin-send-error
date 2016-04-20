@@ -14,7 +14,7 @@ describe( '@sinet/lapin-send-error', function () {
 		handleError = require( process.cwd() );
 	} );
 
-	describe( '-- handle standard error', function () {
+	describe( '-- handle standard error with stack', function () {
 		before( function ( done ) {
 			error    = new Error( 'Something went wrong' );
 			sendMock = new lapinMock.SendMock( done );
@@ -24,7 +24,7 @@ describe( '@sinet/lapin-send-error', function () {
 
 		it( 'should return correct information', function () {
 			sendMock.should.have.property( 'errorMessage' ).and.equal( 'Something went wrong' );
-			sendMock.should.have.property( 'error' ).and.equal( error );
+			sendMock.should.have.property( 'error' ).and.equal( error.stack );
 		} );
 	} );
 
