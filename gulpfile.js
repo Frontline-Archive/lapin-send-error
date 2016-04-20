@@ -38,7 +38,6 @@ gulp.task( 'test', [ 'clean-coverage' ], function () {
 	const mochaOptions = {
 		'ui'       : 'bdd',
 		'reporter' : 'spec',
-		'bail'     : true,
 		'timeout'  : 5000
 	};
 
