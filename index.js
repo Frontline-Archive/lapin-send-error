@@ -30,7 +30,7 @@ function sendError ( send, error, newCode ) {
 	}
 
 	// Send entire error as data if no data has been established
-	send.error( error.message, error.stack || error, code );
+	send.error( error.message || error, error.stack || error, code );
 }
 
 module.exports = sendError;

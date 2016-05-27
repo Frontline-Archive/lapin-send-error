@@ -136,5 +136,19 @@ describe( '@sinet/lapin-send-error', function () {
 				sendMock.should.have.property( 'code' ).and.equal( 'existing,new' );
 			} );
 		} );
+
+		describe( '-- error that is just a string', function () {
+			before( function ( done ) {
+				error    = 'Error with existing code';
+				sendMock = new lapinMock.SendMock( done );
+
+				handleError( sendMock, error );
+			} );
+
+			it( 'should have have the error be the message and data', function () {
+				sendMock.should.have.property( 'errorMessage' ).and.equal( error );
+				sendMock.should.have.property( 'error' ).and.equal( error );
+			} );
+		} );
 	} );
 } );
