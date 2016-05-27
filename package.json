@@ -2,7 +2,10 @@
   "name": "@sinet/lapin-send-error",
   "version": "2.0.0",
   "description": "Uniform way to send errors for lapin, removing nesting, and concatenating error codes",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "files": [
+    "lib/"
+  ],
   "scripts": {
     "eslint": "eslint",
     "gulp": "gulp",
